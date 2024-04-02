@@ -2,7 +2,7 @@ import {users} from '../dummyData/data.js'
 
 const useResolver = {
     Query: {
-        users:() => {
+        users:(_,__,{req,res}) => {
             return users
         },
         user: (_,{userId}) => {
