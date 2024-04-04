@@ -1,6 +1,6 @@
 import cron from 'cron';
 
-import https from 'http';
+import https from 'https';
 
 const URL = "https://graphql-expense-tracker.onrender.com"
 
