@@ -9,7 +9,7 @@ const  transactionTypeDef = `#graphql
     amount: Float!
     location: String
     date:String!
- }
+ } 
  type Query {
    transactions:[Transaction!]
    transaction(transactionId:ID!): Transaction

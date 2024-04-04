@@ -2,7 +2,7 @@ import Transaction from "../models/transaction.model.js";
 
 const transactionResolver = {
     Query:{
-        transaction:async(_,__,context)=> {
+        transactions:async(_,__,context)=> {
             try {
                 if(!context.getUser()) throw new Error("Unauthorized");
                 const userId = await context.getUser()._id
@@ -19,7 +19,7 @@ const transactionResolver = {
                 return transaction;
             } catch (err) {
                 console.log("Error getting transaction:", err);
-                throw new Error("error in getting transaction")
+                throw new Error("error in getting transaction")  
             }
         },
         //todo => add category statistics query 
