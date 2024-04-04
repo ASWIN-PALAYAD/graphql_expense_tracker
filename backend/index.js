@@ -18,11 +18,14 @@ import mergedResolvers from "./resolvers/index.js";
 import mergedTypeDefs from "./typeDefs/index.js";
 import { connectDB } from './db/connectDB.js';
 import { configurePassport } from './passport/passport.config.js';
+import job from './cron.js';
 
 dotenv.config();
-const __dirname = path.resolve();
-
 configurePassport();
+
+job.start();
+
+const __dirname = path.resolve();
 const app = express();
 const httpServer = http.createServer(app); 
 app.use(bodyParser.json());
