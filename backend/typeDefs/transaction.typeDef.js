@@ -9,11 +9,12 @@ const  transactionTypeDef = `#graphql
     amount: Float!
     location: String
     date:String!
+    user:User!
  } 
  type Query {
    transactions:[Transaction!]
    transaction(transactionId:ID!): Transaction
-   #todo => add category statistics query
+   categoryStatistics:[CategoryStatustics!]
  }
 
  type Mutation{
@@ -21,6 +22,11 @@ const  transactionTypeDef = `#graphql
    updateTransaction(input:updateTransactionInput!):Transaction!
    deleteTransaction(transactionId:ID):Transaction!
  }
+
+type CategoryStatustics {
+  category:String!
+  totalAmount:Float!
+}
 
  input createTransactionInput {
    description:String!

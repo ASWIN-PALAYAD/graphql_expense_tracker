@@ -6,11 +6,12 @@ type User {
     password:String!
     profilePicture:String
     gender:String!
+    transactions:[Transaction!]
 }
 
 type Query{
     authUser:User
-    user(userId:ID):User
+    user(userId:ID!):User
 } 
 
 type Mutation {
